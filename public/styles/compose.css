@@ -1,0 +1,39 @@
+#new-tweet-container {
+  display: flex;
+  flex-direction: column;
+}
+
+#submit-tweet {
+  background-color: #4056A1;
+  color: #FFFF;
+  font-family: "Bungee", cursive;
+}
+
+#tweet-text {
+  border-bottom-width: 7px;
+  border-top-width: 0px;
+  border-right-width: 0px;
+  border-left-width: 0px;
+  background-color:  #f4f1ec;
+}
+
+#tweet-text-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 7px;
+}
+
+#tweet-sub-container {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Bungee", cursive;
+}
+
+.new-tweet {
+  width: 80%;
+  margin-top: 7px;
+}
+
+.red-count {
+  color: red;
+}
