@@ -21,8 +21,9 @@
     <link rel="stylesheet" href="/styles/compose.css" type = "text/css">
     <link rel="stylesheet" href="/styles/display.css" type = "text/css">
 
-    <!-- Font Awesome CDN -->
+    <!-- CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -61,21 +62,12 @@
           </div>
           <div id = "tweet-sub-container">
             <button type="submit" id = "submit-tweet">Tweet</button>
+            <span id = "text-error"></span>
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
       </section>
-      <h1>Recent Tweets</h1>
       <section id = "tweets-container">
-        <article>
-          <div class = display-head-container>
-            <i class="far fa-heart"></i>
-            <h2> Zev </h2>
-          </div>
-          
-          <p>Lorem ipsum dolor sit amet consectetur.</p>
-        </article>
-        
       </section>
 
     </main>
