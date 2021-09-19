@@ -1,6 +1,6 @@
 
 $(document).ready(function() {
-  const escape = function (str) {
+  const escape = function(str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
@@ -49,7 +49,7 @@ $(document).ready(function() {
       success: function(data) {
         renderTweets(data);
       }
-    })
+    });
   };
   loadTweets();
 
@@ -58,21 +58,21 @@ $(document).ready(function() {
     const txtErr =  $('#text-error');
     txtErr.hide();
     const txtSubmit = $("#tweet-text").val();
-    if(!txtSubmit || txtSubmit.length === 0) {
-      txtErr.text("Your tweet must be at least 1 character")
+    if (!txtSubmit || txtSubmit.length === 0) {
+      txtErr.text("Your tweet must be at least 1 character");
       txtErr.slideDown("medium");
       
       
       return;
     }
-    if(txtSubmit.length > 140 ) {
+    if (txtSubmit.length > 140) {
       txtErr.text("Your tweet must be less than 140 characters");
       txtErr.slideDown("medium");
       return;
     }
     const serializedData = $(this).serialize();
     $.post("/tweets", serializedData)
-    .then(loadTweets());
+      .then(loadTweets());
     $("#tweet-text").val('');
   });
 
