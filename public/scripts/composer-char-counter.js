@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-  $("#tweet-text").on('input', function(input) {
+  $("#tweet-text").on('input', function() {
 
     const maxLen = 140;
     let twtLen = $(this).val().length;
@@ -15,6 +15,6 @@ $(document).ready(function() {
       counter.removeClass("red-count");
     }
 
-  })
+  });
 
 });
