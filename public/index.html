@@ -17,9 +17,10 @@
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css">
     <link rel="stylesheet" href="/styles/nav.css" type = "text/css">
-    <link rel="stylesheet" href="/styles/header.css" type = "text/css">
-    <link rel="stylesheet" href="/styles/compose.css" type = "text/css">
-    <link rel="stylesheet" href="/styles/display.css" type = "text/css">
+    <link rel="stylesheet" href="/styles/header.css" type ="text/css">
+    <link rel="stylesheet" href="/styles/compose.css" type ="text/css">
+    <link rel="stylesheet" href="/styles/display.css" type ="text/css">
+    <link rel="stylesheet" href="/styles/breakpoints.css" type ="text/css">
 
     <!-- CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -38,8 +39,8 @@
     <!-- Top nav bar (fixed) -->
     <nav>
       <span>tweeter</span>
-      <div class = "new-tweet-container">
-        <span id = "new-tweet-txt"> <b>Write</b> a new tweet </span>
+      <div class ="new-tweet-container">
+        <span id ="new-tweet-txt"> <b>Write</b> a new tweet </span>
         <i class="fas fa-angle-double-down nav-angle"></i>
       </div>
     </nav>
@@ -50,27 +51,25 @@
       <div>
           <h2>Your Name</h2>
       </div>
-  </header>
+    </header>
 
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
-        <form method = "POST" action = "/tweets/" id = "new-tweet-container">
-          <div id = tweet-text-container>
-            <label for="tweet-text">What are you humming about?</label>
+        <form method ="POST" action ="/tweets/" id ="new-tweet-container">
+          <div id ="tweet-text-container">
+            <label for="tweet-text"><b>What are you humming about?</b></label>
             <textarea name="text" id="tweet-text"></textarea>
           </div>
           <div id = "tweet-sub-container">
-            <button type="submit" id = "submit-tweet">Tweet</button>
+            <button type="submit" id ="submit-tweet">Tweet</button>
             <span id = "text-error"></span>
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
       </section>
-      <section id = "tweets-container">
+      <section id ="tweets-container">
       </section>
-
     </main>
   </body>
-  
 </html>
