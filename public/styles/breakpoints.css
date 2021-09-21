@@ -1,0 +1,53 @@
+@media only screen and (max-width: 673px) {
+  .display-head-container {
+    flex-direction: column;
+  }
+  .user-icon {
+    margin-top: 5px;
+  }
+  .user-name {
+    margin: 0;
+  }
+  .user-tag {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width: 1023px) {
+  nav{
+    height: 100px;
+    background-color: #c69222;
+    background-image: url(../images/45-degree-fabric-light.png);
+  }
+
+  header {
+    margin-top: 80px;
+    margin-bottom: 20px;
+    background-color: #c69222;
+    background-image: url(../images/45-degree-fabric-light.png);
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  body {
+    display: grid;
+    grid-template-rows: 120px;
+    grid-template-columns: 35% 65%
+  }
+
+  header {
+
+    width: auto;
+    margin-top: 240px;
+    margin-left: 15%;
+    margin-right: 5%;
+    
+  }
+
+  main {
+    margin-top: 240px;
+    margin-right: 0px;
+    margin-left: 0%;
+    margin-right: 0%;
+  }
+}
