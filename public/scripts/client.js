@@ -5,7 +5,27 @@ $(document).ready(function() {
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
-  
+
+
+  const loadTweets = function() {
+    $.ajax({
+      type: 'GET',
+      url: '/tweets',
+      success: function(data) {
+        renderTweets(data);
+      }
+    });
+  };
+
+  const renderTweets = function(tweets) {
+    const tweetContainer = $('#tweets-container');
+    tweetContainer.empty();
+    for (const tweet of tweets) {
+      const $tweet = createTweetElement(tweet);
+      tweetContainer.prepend($tweet);
+    }
+  };
+
   const createTweetElement = (tweet) => {
     const markup = `<article>
           <div class = display-head-container>
@@ -32,37 +52,17 @@ $(document).ready(function() {
     
     return markup;
   };
-
-  const renderTweets = function(tweets) {
-    const tweetContainer = $('#tweets-container');
-    tweetContainer.empty();
-    for (const tweet of tweets) {
-      const $tweet = createTweetElement(tweet);
-      tweetContainer.prepend($tweet);
-    }
-  };
-
-  const loadTweets = function() {
-    $.ajax({
-      type: 'GET',
-      url: '/tweets',
-      success: function(data) {
-        renderTweets(data);
-      }
-    });
-  };
+  
   loadTweets();
 
   $('form').on('submit', function(event) {
     event.preventDefault();
     const txtErr =  $('#text-error');
     txtErr.hide();
-    const txtSubmit = $("#tweet-text").val();
+    const txtSubmit = $(this).serializeArray()[0]['value'];
     if (!txtSubmit || txtSubmit.length === 0) {
       txtErr.text("Your tweet must be at least 1 character");
       txtErr.slideDown("medium");
-      
-      
       return;
     }
     if (txtSubmit.length > 140) {
@@ -75,6 +75,5 @@ $(document).ready(function() {
       .then(loadTweets());
     $("#tweet-text").val('');
   });
-
   
 });
