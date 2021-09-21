@@ -6,7 +6,7 @@ $(document).ready(function() {
     let twtLen = $(this).val().length;
     let charLeft = maxLen - twtLen;
     const counter = $(this).parents().find(".counter");
-    
+
     counter[0].innerText = charLeft;
     if (charLeft < 0) {
       counter.addClass("red-count");
