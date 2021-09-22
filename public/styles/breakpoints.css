@@ -50,4 +50,8 @@
     margin-left: 0%;
     margin-right: 0%;
   }
+
+  .new-tweet {
+    margin-top: 0;
+  }
 }
