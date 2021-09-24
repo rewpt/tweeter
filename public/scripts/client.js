@@ -19,12 +19,29 @@ $(document).ready(function() {
 
   const renderTweets = function(tweets) {
     const tweetContainer = $('#tweets-container');
-    tweetContainer.empty();
     for (const tweet of tweets) {
       const $tweet = createTweetElement(tweet);
       tweetContainer.prepend($tweet);
     }
   };
+
+  const renderSingle = function(tweets) {
+    const tweetContainer = $('#tweets-container');
+    const tweetsLen = tweets.length;
+    const $tweet = createTweetElement(tweets[tweetsLen - 1]);
+    tweetContainer.prepend($tweet);
+  }
+
+  const loadSingle = function() {
+    $.ajax({
+      type: 'GET',
+      url: '/tweets',
+      success: function(data) {
+        renderSingle(data);
+      }
+    });
+  }
+
 
   const createTweetElement = (tweet) => {
     const markup = `<article>
@@ -72,7 +89,7 @@ $(document).ready(function() {
     }
     const serializedData = $(this).serialize();
     $.post("/tweets", serializedData)
-      .then(loadTweets());
+      .then(() => {loadSingle()});
     $("#tweet-text").val('');
   });
   
