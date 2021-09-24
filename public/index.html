@@ -58,7 +58,10 @@
       <section class="new-tweet">
         <form method ="POST" action ="/tweets/" id ="new-tweet-container">
           <div id ="tweet-text-container">
-            <label for="tweet-text"><b>What are you humming about?</b></label>
+            <div class = text-error-inline>
+              <label for="tweet-text"><b>What are you humming about?</b></label>
+              <span id = "text-error"></span>
+            </div>
             <textarea name="text" id="tweet-text"></textarea>
           </div>
           <div id = "tweet-sub-container">
