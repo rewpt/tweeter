@@ -13,7 +13,17 @@
   }
 }
 
+@media only screen and (max-width: 1176px) {
+  .text-error-inline {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+}
+
 @media only screen and (max-width: 1023px) {
+
   nav{
     height: 100px;
     background-color: #c69222;
@@ -53,5 +63,10 @@
 
   .new-tweet {
     margin-top: 0;
+  }
+
+  .text-error-inline {
+    display: flex;
+    justify-content: space-between;
   }
 }
