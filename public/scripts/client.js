@@ -89,8 +89,11 @@ $(document).ready(function() {
     }
     const serializedData = $(this).serialize();
     $.post("/tweets", serializedData)
-      .then(() => {loadSingle()});
-    $("#tweet-text").val('');
+      .then(() => {
+        loadSingle();
+        $("#tweet-text").val('');
+        $("#tweet-sub-container > output").val('140');
+      });   
   });
   
 });
